@@ -305,6 +305,7 @@ export default DS.RESTAdapter.extend({
           var parsedId = db.rel.parseDocID(row._id);
           if (!Ember.isEmpty(parsedId.id)) {
             row.data.id = parsedId.id;
+            row.data.rev = row._rev
             return row.data;
           }
         });
